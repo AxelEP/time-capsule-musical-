@@ -1,5 +1,5 @@
 // ==== CONFIGURA AQUÍ TU URL DEL SCRIPT DE GOOGLE ====
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwCqZN4plWldDEYkbR_7W8Y7fVYp4ggf3huKlb-nKh90Lt0t7ZSNiQ-5WemerF1jjPF/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_FmIdz490DPLmphatoTwCct570lwsWSlxRkIpIrEOAGq_fkKsc--s120DUfQbD1Qy/exec";
 
 const countdownEl = document.getElementById("countdown");
 const launchDate = new Date("2025-11-22T00:00:00");
