@@ -1,61 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffe6ff, #d9e6ff);
+  background: linear-gradient(135deg, #f9d8ff, #dbe2ff, #fff0f5);
   color: #333;
   text-align: center;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
+/* Notas musicales flotantes 🎵 */
+.note {
+  position: fixed;
+  font-size: 24px;
+  color: #ff8cc6;
+  opacity: 0.8;
+  animation: floatUp 6s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+/* Contenedor principal */
 .container {
-  max-width: 600px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
 }
 
 h1 {
-  color: #ff5cb8;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8em;
+  color: #a066ff;
+  text-shadow: 2px 2px #ffd6f5;
+}
+
+h2 {
+  color: #444;
+  margin-top: 10px;
 }
 
 #countdown {
-  font-size: 1.5em;
+  font-size: 1.8em;
+  font-weight: 600;
   margin: 20px 0;
-  font-weight: bold;
-}
-
-textarea, input {
-  width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #ccc;
-  font-size: 1em;
-}
-
-textarea {
-  height: 100px;
-  resize: none;
-}
-
-button {
-  background-color: #a066ff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #7e3fff;
+  color: #ff66b2;
+  text-shadow: 1px 1px #fff;
 }
 
 .launch-date {
   font-style: italic;
   color: #555;
 }
+
+/* Formulario */
+.form-container {
+  margin-top: 25px;
+}
+
+textarea, input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #e1caff;
+  background-color: #fffafc;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+textarea:focus, input:focus {
+  border-color: #b07cff;
+  outline: none;
+  background-color: #fff;
+}
+
+button {
+  background: linear-gradient(135deg, #b07cff, #ff8cc6);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a066ff, #ff6fb0);
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 0.95em;
+  color: #5a3fff;
+  font-weight: 500;
+}
+
+/* Efecto de brillos suaves */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.3) 0%, transparent 60%),
+              radial-gradient(circle at 90% 80%, rgba(255,200,255,0.2) 0%, transparent 70%);
+  z-index: 1;
+}
+
